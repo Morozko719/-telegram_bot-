@@ -12,13 +12,14 @@ from datetime import datetime
 import pytz
 import requests
 import logging
+import os
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # API Tokens and IDs
-API_TOKEN = "7785115175:AAHw9wZ3pLjNrdaTFadP2BKCR9GyS2zvGGU"
+API_TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_USERNAME = "@rasstanovka1"
 ADMIN_ID = 5038917985
 PAYMENT_CHANNEL = "@payment_receipts_channel"
