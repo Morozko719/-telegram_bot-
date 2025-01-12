@@ -547,7 +547,7 @@ def main():
 
     # Start the bot
     print("Bot is running...")
-    application.run_polling(allowed_updates=Update.ALL_TYPES)
+    application.run_polling(allowed_updates=Update.ALL_TYPES, timeout=60)
 
 if __name__ == '__main__':
     main()
