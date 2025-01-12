@@ -548,14 +548,7 @@ def main():
 
     # Start the bot
     print("Bot is running...")
-    port = int(os.getenv('PORT', '8080'))
-    
-    # Запускаем бота с привязкой к IP 0.0.0.0
-    application.run_polling(
-        ip_address="0.0.0.0",
-        port=port,
-        drop_pending_updates=True
-    )
+    application.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == '__main__':
     main()
