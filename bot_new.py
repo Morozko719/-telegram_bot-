@@ -548,14 +548,11 @@ def main():
 
     # Start the bot
     print("Bot is running...")
-    PORT = int(os.getenv('PORT', '8080'))
-    WEBHOOK_URL = 'https://worker-production-71b4.up.railway.app'
+    # Для совместимости с Railway, но не используем порт
+    port = int(os.getenv('PORT', '8080'))
     
-    application.run_webhook(
-        listen='0.0.0.0',
-        port=PORT,
-        webhook_url=WEBHOOK_URL
-    )
+    # Запускаем в режиме polling
+    application.run_polling(drop_pending_updates=True)
 
 if __name__ == '__main__':
     main()
