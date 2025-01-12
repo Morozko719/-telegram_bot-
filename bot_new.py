@@ -548,11 +548,14 @@ def main():
 
     # Start the bot
     print("Bot is running...")
-    # Для совместимости с Railway, но не используем порт
     port = int(os.getenv('PORT', '8080'))
     
-    # Запускаем в режиме polling
-    application.run_polling(drop_pending_updates=True)
+    # Запускаем бота с привязкой к IP 0.0.0.0
+    application.run_polling(
+        ip_address="0.0.0.0",
+        port=port,
+        drop_pending_updates=True
+    )
 
 if __name__ == '__main__':
     main()
