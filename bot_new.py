@@ -548,7 +548,8 @@ def main():
 
     # Start the bot
     print("Bot is running...")
-    application.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
+    PORT = int(os.getenv('PORT', '8080'))
+    application.run_polling(port=PORT)
 
 if __name__ == '__main__':
     main()
